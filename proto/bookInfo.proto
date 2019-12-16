@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+message BookRequest {
+    uint32 BookNum = 1;
+}
+message BookResponse {
+    uint32 PageCount = 1;
+    string BookName = 2;
+    string Author = 3;
+    string Price = 4;
+}
+service BookInfoService {
+    rpc FindInfoByBookNum (BookRequest) returns (BookResponse);
+}
